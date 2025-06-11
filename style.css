@@ -1,0 +1,326 @@
+/* :root 集中定义变量 */
+/* --text- 是自定义的一个变量名称 不用后面每次用到都输入颜色的一长串符号 */
+/*只用一个变量名就能复用它的值*/
+:root {
+    --text-color: #1a1c20;
+    --link-color: #4a76ee;
+    --background-color: #fafcff;
+
+}
+
+/*  *{}选中页面上所有元素，对它们都应用下面这些样式*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*页面滚动流畅*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-color);
+    max-width: 1400px;
+    margin:0 auto;
+}
+
+/*<a> 标签，浏览器默认会渲染成蓝色 + 下划线*/
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* NAVBAR*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 80px;
+
+}
+
+nav .left a {
+    color: var(--text-color);
+    font-size: 22px;
+    font-weight: 600;
+
+}
+
+nav .right a {
+    color: var(--text-color);
+    margin: 0 10px;
+
+}
+
+nav .right a:last-child {
+    color: var(--background-color);
+    background-color: var(--text-color);
+    padding: 5px 15px;
+    border-radius: 5px
+}
+
+nav .right a span {
+    margin-left: 5px;
+    /*图标和右边的文字有点距离*/
+}
+
+/*Section1:hero*/
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: centern;
+    padding: 0 50px;
+    margin: 50px 0;
+    margin-bottom: 100px;
+    /*between hero and next section*/
+    gap: 40px
+}
+
+.hero-section .text {
+    flex: 5;
+}
+
+.hero-section .text h2 {
+    font-size: 45px;
+}
+
+.hero-section .text .links {
+    margin-top: 25px;
+}
+
+.hero-section .text .links a {
+    display: inline-block;
+    padding: 5px 10px;
+    /*内容和边框之间的space*/
+    border: 2px solid var(--link-color);
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: 0.1s;
+}
+
+.hero-section .text .links a:hover {
+    color: var(--text-color);
+    border: 2px solid var(var(--text-color))
+}
+
+.hero-section .headshot {
+    flex: 2;
+    display: flex;
+    justify-content: right;
+    /*无论窗口怎么变化 图片都在右边*/
+
+}
+
+/*img 是默认按自己的尺寸显示的，img 不会因为外层 .headshot 变窄就自动变小*/
+/*.headshot img 只能点出来具体的图片给他设置大小*/
+.hero-section .headshot img {
+    width: 300px;
+    border-radius: 50%;
+    /*圆形*/
+}
+
+/* SECTION 2:Skills */
+.skills-section{
+    padding:0 50px;
+    margin-bottom: 100px;
+}
+.skills-section h2{
+    text-align: center;
+    font-size: 35px;
+}
+.skills-section .text{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.skills-section .cells{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* 是让排不下的元素自动换行*/
+}
+.skills-section .cells .cell{
+    display: flex;
+    justify-content: center;/*水平居中*/
+    align-items: center;    /*垂直居中*/
+    gap: 10px;      /*互相之间的距离*/
+
+    width: 200px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1.5px solid #d9dcdd;
+    border-radius: 5px;
+}
+.skills-section .cells .cell img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;/* resized to fit its container*/
+}
+.skills-section .cells .cell span{
+    font-size: 18px;
+}
+
+/* SECTION 3:Testimony */
+.testimony-section{
+    padding:0 50px;
+    margin-bottom: 100px;
+}
+.testimony-section h2{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.testimony-section .group{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.testimony-section .group .person-details{
+    text-align: center;
+    flex: 2;
+}
+.testimony-section .group .text{
+    flex: 8; /*80% of the space rights*/
+}
+.testimony-section .group .person-details img{
+    width: 200px;
+    aspect-ratio: 1/1;
+    object-fit: cover;/*防止图片变形*/
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.testimony-section .group .person-details p{
+    font-weight: 600;
+}
+.testimony-section .group .person-details p:last-child{
+    font-weight: normal;
+
+}
+
+/* SECTION 4:Contact */
+.contact-section{
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+.contact-section h2{
+    font-size: 35px;
+}
+.contact-section .group{
+    display: flex;
+    gap: 50px;
+}
+.contact-section .group .text{
+    flex:3;
+    margin-top:20px;
+}
+.contact-section .group form{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section .group form input,
+.contact-section .group form textarea{
+    font-family: 'Poppins',sans-serif;
+    border: 2px solid var(--link-color);
+    background-color: transparent;
+    padding: 10px;
+    margin-bottom: 15px;
+    outline: none;/*去掉元素在被点击（focus）时显示的外边框（轮廓线）*/
+    resize: none; /*禁止用户手动拖动 <textarea> 改变大小*/
+}
+.contact-section .group form button{
+    font-size: 16px;
+    font-family:'Poppins',sans-serif; 
+    color: #fafcff;
+    background-color: var(--link-color);
+    border: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.contact-section .group form button:hover{
+    filter: brightness(0.9);/*让按钮的亮度降低到 90%，也就是稍微变暗*/
+}
+
+
+@media (max-width:850px) {
+
+    /*section 1 hero*/
+    .hero-section .text h2 {
+        font: size 35px;
+        ;
+    }
+}
+
+@media (max-width:740px) {
+
+    /*section 1 hero*/
+    .hero-section {
+        flex-direction: column-reverse;/*头像到文字上方*/
+    }
+    .hero-section .headshot img{
+        width:300px;
+    }
+    /* Section 3 testimony*/
+    .testimony-section h2{
+        text-align: center;
+    }
+    .testimony-section .group{
+        flex-direction: column;
+    }
+    /* Section 4 Contact*/
+    .contact-section .group{
+        flex-direction: column;
+    }
+}
+
+/*@media屏幕变窄了，就切换成更适合手机的样式*/
+@media (max-width:600px) {
+
+    /*在小屏幕里面的display样式*/
+    /*navabar*/
+    nav {
+        padding: 0 20px;
+    }
+
+    nav .right a {
+        font-size: 22px;
+    }
+
+    nav .right a:last-child {
+        color: var(--text-color);
+        background-color: transparent;
+        padding: 0;
+    }
+
+    /*小屏幕上只显示图标，不显示文字*/
+    nav .right a span {
+        display: none;
+    }
+    
+    /*Secttion 1:Hero */
+    .hero-section{
+        padding: 0 20px;
+    }
+    .hero-section .text h2{
+        font-size: 30px;
+    }
+    /*Section 2 Skills */
+    .skills-section{
+        padding: 0 20px;
+    }
+    .skills-section .cells .cell span{
+        font-size: 16px;
+    }
+    /* Section 3 testimony*/
+    .contact-section {
+        padding: 0 20px;}
+    /* Section 4 Contact*/
+    .contact-section {
+        padding: 0 20px;}
+}
